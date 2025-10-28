@@ -1,6 +1,12 @@
-# Введение
+ ```systemverilog
 
-```verilog 
 
-assign a = b ^ c ;
+module Xorr(
+input  logic A, B, 
+output logic C
+);
+
+assign C = A ^ B;
+
+endmodule 
 ```
