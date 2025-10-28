@@ -1,0 +1,6 @@
+# Введение
+
+```verilog 
+
+assign a = b ^ c ;
+```
