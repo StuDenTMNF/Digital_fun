@@ -25,7 +25,7 @@ module sprinkler_controller (
   reg [31:0] timer_cnt;           // 32-битный счётчик для отсчёта времени
   wire timer_done;                // Флаг, что таймер закончил считать
 
-  // --- 4. Логика Таймера (САМОЕ ВАЖНОЕ!) ---
+  // --- 4. Логика Таймера  ---
   // Этот блок отвечает за отсчёт времени.
   always @(posedge clk or posedge rst) begin
     if (rst) begin
@@ -51,8 +51,7 @@ module sprinkler_controller (
          (state == PAUSE      && timer_cnt == DURATION_5_SEC)  ||
          (state == WATERING_B && timer_cnt == DURATION_10_SEC);
 
-  // --- 5. Логика переходов состояний (Мозг FSM) ---
-  // Этот блок определяет, каким будет СЛЕДУЮЩЕЕ состояние.
+  // --- 5. Логика переходов состояний  ---
   always @(*) begin
     next_state = state; // По умолчанию остаёмся в том же состоянии
     case (state)
@@ -87,8 +86,8 @@ module sprinkler_controller (
     endcase
   end
 
-  // --- 6. Обновление состояния по тактовому сигналу (Сердце FSM) ---
-  // Этот блок просто выполняет команду "Мозга" по фронту clk.
+  // --- 6. Обновление состояния по тактовому сигналу  ---
+ 
   always @(posedge clk or posedge rst) begin
     if (rst) begin
       state <= IDLE;
@@ -97,8 +96,8 @@ module sprinkler_controller (
     end
   end
 
-  // --- 7. Логика выходов (Руки FSM - Автомат Мура) ---
-  // Этот блок определяет выходы, основываясь ТОЛЬКО на ТЕКУЩЕМ состоянии.
+  // --- 7. Логика выходов ( Автомат Мура) ---
+  
   always @(*) begin
     // По умолчанию всё выключено
     valve_A_open = 1'b0;
