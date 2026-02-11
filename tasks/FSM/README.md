@@ -652,8 +652,88 @@ endmodule
 </details>
 Открываем RTL viewer и наблюдаем вот такую картину
 
+<img src="media/TK_moore_RTL.png" style="width: 100%; height: auto;" />
+
 Также можем посмотреть на таблицу и диаграмму состояний:
 
+<img src="media/TK_more.png" style="width: 100%; height: auto;" />
+
+
+| Текущее состояние | Конечное состояние | Условие |
+| :---: | :---: | :---: |
+| IDLE_F1     | IDLE_F1     | `~request_F2` |
+|IDLE_F1      | moving_up   | `request_F2` |
+| IDLE_F2     | IDLE_F2     | `~request_F1` |
+| IDLE_F2     | moving_down | `request_F1` |
+| moving_down | IDLE_F1     |`sensor_F1`|
+| moving_down | moving_down | `~sensor_F1` |
+| moving_up   | IDLE_F2     | `sensor_F2` |
+| moving_up   |moving_up    |`~sensor_F2 `|
+
+Для автомата Милли Все, кроме логики выходов, будет то же самое.
+
+<details>
+	
+<summary><b>Реализация выходной логики на verilog</b></summary>
+
+```systemverilog
+
+   //логика выходов для автомата Милли
+	always @(*) begin
+	motor_up = 1'b0;
+	motor_down = 1'b0;
+	door_open = 1'b0;
+	
+		  case (state) 
+		  
+					 moving_up : begin  motor_up = 1'b1;
+					 
+					 
+					 if (sensor_F2) begin
+					 door_open = 1'b1;
+					end
+		 
+			  end
+		 
+		 
+		 
+					 IDLE_F2 : begin  door_open = 1'b1;
+		 
+			  end
+		 
+		  
+		  
+					 moving_down : begin  motor_down = 1'b1;
+					 
+					 if (sensor_F1) begin
+					 door_open = 1'b1;
+					end
+		 
+			  end
+		 
+		  
+		  
+					 IDLE_F1 : begin  door_open = 1'b1;
+		 
+			  end
+		 
+		
+		 
+		 
+	  endcase
+	end
+
+```
+	
+</details>
+
+Открываем RTL viewer и смотрим на полученную схему
+
+<img src="media/TK_milley_RTL.png" style="width: 100%; height: auto;" />
+
+Таблица и диаграмма состояний:
+
+<img src="media/TK_milley.png" style="width: 100%; height: auto;" />
 
 | Текущее состояние | Конечное состояние | Условие |
 | :---: | :---: | :---: |
