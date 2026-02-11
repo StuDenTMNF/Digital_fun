@@ -367,7 +367,7 @@ endmodule
 2. Т.к в условии задачи сказано, что система должна быть умной, чтобы реагировать на вызовы этажей - логично предположить, что на этажах располагаются сенсоры. От них он и получает информацию.
 
 
-  <details>
+<details>
 	  
 <summary><b>input "мозга" на Verilog</b></summary>
 
@@ -382,7 +382,7 @@ input sensor_F2,
 
 ```
 
-   </details>
+</details>
 
 
 Удобно так же определиться с основным функционалом нашего "Мозга":
@@ -391,9 +391,9 @@ input sensor_F2,
 3. Т.к в условии задачи сказано, что система должна быть умной, чтобы реагировать на вызовы этажей - логично предположить, что на этажах располагаются сенсоры, получая сигнал от которых, лифт останавливается и открывает двери.
 
 
-     <details>
+<details>
 		 
-            <summary><b>output "мозга" на verilog</b></summary>
+<summary><b>output "мозга" на verilog</b></summary>
 
    ```systemverilog
 
@@ -403,7 +403,7 @@ input sensor_F2,
 
    ```
 
-     </details>
+</details>
 
 
 После того, как мы определились с основной задачей нашего лифта, удобно определиться и с основными состояниями конечного автомата.
@@ -430,7 +430,224 @@ reg [1:0] state, next_state;
 	
 </details>
 
-Прекрасно. После решения всех этих вопросов, можно переходить к описанию нашего конечного автомата на verilog 
+Прекрасно. После решения всех этих вопросов, можно переходить к описанию логики состояний нашего конечного автомата.
+
+Он должен:
+
+1.По дефолту находится на одном из этажей. Вы можете выбрать любой из них.
+
+<details>
+	
+<summary><b>Реализация на verilog</b></summary>
+
+```systemverilog
+
+    default: begin next_state = IDLE_F1;
+end
+
+```
+	
+</details>
+
+2.Быть в состоянии движения при получении запроса с этажа.
+
+<details>
+	
+<summary><b>Реализация на verilog</b></summary>
+
+```systemverilog
+
+   IDLE_F1 : begin if (request_F2) begin next_state = moving_up;
+	 
+end
+
+```
+	
+</details>
 
 
+3.Останавливаться, при получении сигнала от сенсора.
+
+<details>
+	
+<summary><b>Реализация на verilog</b></summary>
+
+```systemverilog
+
+   moving_up: begin if (sensor_F2) begin next_state = IDLE_F2;
+	 
+end
+
+```
+	
+</details>
+
+остальные состояния вы можете написать сами по аналогии.
+
+Перейдем к описанию логики выходов.
+
+1.Находясь в состоянии движения, двигатель должен поднимать или опускать лифт.
+
+2.Находясь в состоянии ожидания, двери лифта должны быть открыты.
+
+<details>
+	
+<summary><b>Реализация на verilog</b></summary>
+
+```systemverilog
+
+   always @(*) begin
+	motor_up = 1'b0;
+	motor_down = 1'b0;
+	door_open = 1'b0;
+	
+		  case (state) 
+		  
+					 moving_up : begin  motor_up = 1'b1;
+		 
+			  end
+		 
+		 
+		 
+					 IDLE_F2 : begin  door_open = 1'b1;
+		 
+			  end
+		 
+		  
+		  
+					 moving_down : begin  motor_down = 1'b1;
+		 
+			  end
+		 
+		  
+		  
+					 IDLE_F1 : begin  door_open = 1'b1;
+		 
+			  end
+		 
+		
+		 
+		 
+	  endcase
+	end
+
+```
+	
+</details>
+
+
+<details>
+	
+<summary><b>Описание всего автомата на verilog</b></summary>
+
+```systemverilog
+
+   module tower_keeper_moore(
+input clk,
+input rst,
+input request_F1,
+input request_F2,
+input sensor_F1,
+input sensor_F2,
+output reg motor_up,
+output reg motor_down,
+output reg door_open
+);
+
+localparam IDLE_F1     = 2'd0;
+localparam moving_up   = 2'd1;
+localparam IDLE_F2     = 2'd2;
+localparam moving_down = 2'd3;
+
+reg [1:0] state, next_state;
+
+always @(*) begin
+      next_state = state;
+		
+       case(state) 
+	 
+	          IDLE_F1 : begin if (request_F2) begin next_state = moving_up;
+	 
+	     end
+	 end
+	 
+	  
+	 
+	           moving_up: begin if (sensor_F2) begin next_state = IDLE_F2;
+	 
+	     end
+	 end
+	 
+	 
+	           IDLE_F2: begin if (request_F1) begin next_state = moving_down;
+	 
+	     end
+	 end
+	 
+	 
+	           moving_down: begin if (sensor_F1) begin next_state = IDLE_F1;
+	 
+	     end
+	 end
+	 
+	 
+	           default: begin next_state = IDLE_F1;
+	 
+	     end
+	 endcase
+end
+
+
+always @(posedge clk or posedge rst) begin
+
+      if (rst) begin
+		
+		state <= IDLE_F1;
+		
+		end else begin
+		
+		state <= next_state;
+	end
+end
+
+	always @(*) begin
+	motor_up = 1'b0;
+	motor_down = 1'b0;
+	door_open = 1'b0;
+	
+		  case (state) 
+		  
+					 moving_up : begin  motor_up = 1'b1;
+		 
+			  end
+		 
+		 
+		 
+					 IDLE_F2 : begin  door_open = 1'b1;
+		 
+			  end
+		 
+		  
+		  
+					 moving_down : begin  motor_down = 1'b1;
+		 
+			  end
+		 
+		  
+		  
+					 IDLE_F1 : begin  door_open = 1'b1;
+		 
+			  end
+		 
+		
+		 
+		 
+	  endcase
+	end
+
+endmodule
+
+```
+	
+</details>
 
