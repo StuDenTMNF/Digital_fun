@@ -650,4 +650,18 @@ endmodule
 ```
 	
 </details>
+Открываем RTL viewer и наблюдаем вот такую картину
 
+Также можем посмотреть на таблицу и диаграмму состояний:
+
+
+| Текущее состояние | Конечное состояние | Условие |
+| :---: | :---: | :---: |
+| IDLE_F1     | IDLE_F1     | `~request_F2` |
+|IDLE_F1      | moving_up   | `request_F2` |
+| IDLE_F2     | IDLE_F2     | `~request_F1` |
+| IDLE_F2     | moving_down | `request_F1` |
+| moving_down | IDLE_F1     |`sensor_F1`|
+| moving_down | moving_down | `~sensor_F1` |
+| moving_up   | IDLE_F2     | `sensor_F2` |
+| moving_up   |moving_up    |`~sensor_F2 `|
