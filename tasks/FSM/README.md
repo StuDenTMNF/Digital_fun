@@ -753,8 +753,127 @@ endmodule
 | moving_up   |moving_up    |`~sensor_F2 `|
 
 ## Тестирование
-Для тестирования мы будем использовать тестбенч, который был ранее написан нашей командой. 
+Для тестирования мы будем использовать тестбенч, который был ранее написан нашей командой. Тестировть будем в программе modelsim
+
+<details>
+	
+<summary><b>Test Bench file</b></summary>
+
+```systemverilog
+
+ `timescale 1ns / 1ps
+
+module tb_tower_keeper;
+
+  
+  logic clk;
+  logic rst;
+  logic req_F1;
+  logic req_F2;
+  
+
+  logic sens_F1;
+  logic sens_F2;
+  
+
+  logic motor_up;
+  logic motor_down;
+  logic door_open;
+
+  tower_keeper_moore DUT (
+    .clk(clk),
+    .rst(rst),
+    .request_F1(req_F1),
+    .request_F2(req_F2),
+    .sensor_F1(sens_F1),
+    .sensor_F2(sens_F2),
+    .motor_up(motor_up),
+    .motor_down(motor_down),
+    .door_open(door_open)
+  );
+
+  initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+  end
+
+  initial begin
+    $dumpfile("elevator.vcd");
+    $dumpvars(0, tb_tower_keeper);
+    
+    rst = 1;
+    req_F1 = 0; req_F2 = 0;
+    sens_F1 = 0; sens_F2 = 0; 
+    
+    repeat(5) @(posedge clk);
+    rst = 0;
+   
+    
+    // --- СЦЕНАРИЙ 1: Поездка на 2 этаж ---
+   
+    @(posedge clk);
+    req_F2 = 1; 
+    @(posedge clk);
+    req_F2 = 0; 
+    
+    // Теперь ждем реакции мотора
+    wait(motor_up == 1); 
+  
+    
+   
+    repeat(10) @(posedge clk); 
+    
+    // Лифт доехал до датчика 2 этажа
+   
+    sens_F2 = 1; 
+    @(posedge clk); 
+    sens_F2 = 0; // Лифт проехал датчик и встал (или датчик сработал импульсно)
+    
+    // Проверка: Мотор должен встать, двери открыться
+    @(posedge clk); // Даем такт на реакцию
+    
+
+    // Пауза "на этаже" (пассажир выходит)
+    repeat(10) @(posedge clk);
+
+    // --- СЦЕНАРИЙ 2: Возвращение на 1 этаж ---
+   
+    @(posedge clk);
+    req_F1 = 1;
+    @(posedge clk);
+    req_F1 = 0;
+    
+    wait(motor_down == 1);
+   
+    
+    repeat(10) @(posedge clk); // Едем вниз
+    
+   
+    sens_F1 = 1;
+    @(posedge clk);
+    sens_F1 = 0;
+    
+    @(posedge clk);
+   
+
+    $finish;
+  end
+
+  // --- Мониторинг для отладки в консоли ---
+  // Сакана любит всё контролировать
+  initial begin
+    $monitor("Time=%0t | State=%d | UP=%b DWN=%b DOOR=%b | Req F2=%b Sens F2=%b", 
+             $time, DUT.state, motor_up, motor_down, door_open, req_F2, sens_F2);
+  end
+
+endmodule
+
+```
+	
+</details>
 
 
 Результаты Вы можете видеть на экране. Объектом тестирования был конечный автомат Мура.
 <img src="media/TK_moore_tb.png" style="width: 100%; height: auto;" />
+
+Как видно из картинки - все работает. Мы успешно завершаем нашу первую лекци по конечным автоматам. 
