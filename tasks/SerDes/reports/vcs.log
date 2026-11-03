@@ -1,0 +1,520 @@
+Command: vcs -debug_all +v2k -full64 +lint=TFIPC-L +sdfverbose +neg_tchk -full64 \
+-lca -cm line+cond+fsm+tgl+path+assert -cm_tgl mda -cm_line contassign -cm_cond allops+anywidth+event \
+-cm_noconst -debug_all +v2k -sverilog +lint=all -Mupdate -l vcs.log serdes_top_mntc_tb.v \
+../src/decoder_10b8b_mntc.v ../src/encoder8b10b_mntc.v ../src/piso_10bit_mntc.v ../src/sipo_10bit_mntc.v \
+../src/serdes_top_mntc.v
+                         Chronologic VCS (TM)
+       Version L-2016.06-SP2_Full64 -- Fri Oct 30 15:40:20 2026
+               Copyright (c) 1991-2016 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS/VCS-MX Release Notes
+
+Parsing design file 'serdes_top_mntc_tb.v'
+
+Lint-[VCDE] Compiler directive encountered
+serdes_top_mntc_tb.v, 1
+  Verilog compiler directive encountered "`timescale".
+
+
+Lint-[VCDE] Compiler directive encountered
+serdes_top_mntc_tb.v, 2
+  Verilog compiler directive encountered "`default_nettype".
+
+
+Lint-[NS] Null statement
+serdes_top_mntc_tb.v, 104
+  Null statement is used in following verilog source.
+  
+
+
+Lint-[NS] Null statement
+serdes_top_mntc_tb.v, 108
+  Null statement is used in following verilog source.
+  
+
+
+Lint-[NS] Null statement
+serdes_top_mntc_tb.v, 114
+  Null statement is used in following verilog source.
+  
+
+
+Lint-[NS] Null statement
+serdes_top_mntc_tb.v, 236
+  Null statement is used in following verilog source.
+  
+
+
+Lint-[NS] Null statement
+serdes_top_mntc_tb.v, 238
+  Null statement is used in following verilog source.
+  
+
+
+Lint-[NS] Null statement
+serdes_top_mntc_tb.v, 248
+  Null statement is used in following verilog source.
+  
+
+
+Lint-[VCDE] Compiler directive encountered
+serdes_top_mntc_tb.v, 267
+  Verilog compiler directive encountered "`default_nettype".
+
+Parsing design file '../src/decoder_10b8b_mntc.v'
+
+Lint-[VCDE] Compiler directive encountered
+../src/decoder_10b8b_mntc.v, 1
+  Verilog compiler directive encountered "`default_nettype".
+
+
+Lint-[VCDE] Compiler directive encountered
+../src/decoder_10b8b_mntc.v, 171
+  Verilog compiler directive encountered "`default_nettype".
+
+Parsing design file '../src/encoder8b10b_mntc.v'
+
+Lint-[VCDE] Compiler directive encountered
+../src/encoder8b10b_mntc.v, 4
+  Verilog compiler directive encountered "`default_nettype".
+
+
+Lint-[VCDE] Compiler directive encountered
+../src/encoder8b10b_mntc.v, 159
+  Verilog compiler directive encountered "`default_nettype".
+
+Parsing design file '../src/piso_10bit_mntc.v'
+Parsing design file '../src/sipo_10bit_mntc.v'
+Parsing design file '../src/serdes_top_mntc.v'
+
+Lint-[VCDE] Compiler directive encountered
+../src/serdes_top_mntc.v, 1
+  Verilog compiler directive encountered "`default_nettype".
+
+
+Lint-[VCDE] Compiler directive encountered
+../src/serdes_top_mntc.v, 75
+  Verilog compiler directive encountered "`default_nettype".
+
+Top Level Modules:
+       tb_serdes_top_mntc
+TimeScale is 1 ns / 1 ps
+VCS Coverage Metrics Release L-2016.06-SP2_Full64 Copyright (c) 1991-2016 by Synopsys Inc.
+
+Warning-[VCM-PCPI] Path Coverage performance impact
+  The switch "-cm path" can impact performance when enabled on entire design. 
+  Please enable path coverage for only selected modules or hierarchies using 
+  the -cm_hier <hier_config>. Please refer to VCS Coverage document for usage 
+  of "-cm_hier"
+
+Starting vcs inline pass...
+1 unique modules to generate
+recompiling module tb_serdes_top_mntc
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
+-Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic   objs/amcQw_d.o   _6834_archive_1.so \
+SIM_l.o       rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o    \
+/home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libzerosoft_rt_stubs.so \
+/home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libvirsim.so /home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/liberrorinf.so \
+/home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libsnpsmalloc.so    \
+/home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libvcsnew.so /home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libsimprofile.so \
+/home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libreader_common.so \
+/home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libBA.a /home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libuclinative.so \
+-Wl,-whole-archive /home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/libvcsucli.so \
+-Wl,-no-whole-archive          /home/andy/Tools/syn64_new/vcs_mx_vL-2016.06-SP2/linux64/lib/vcs_save_restore_new.o \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .219 seconds to compile + .210 seconds to elab + .072 seconds to link
+
+Chronologic VCS simulator copyright 1991-2016
+Contains Synopsys proprietary information.
+Compiler version L-2016.06-SP2_Full64; Runtime version L-2016.06-SP2_Full64;  Oct 30 15:43 2026
+
+================ pattern 1: all K-codes ================
+[195000 ns] #1 | input: K.28.0 (k=1, 0x1c) ---> output: K.28.0 (k=1, 0x1c) | err=0 | [OK]
+[325000 ns] #2 | input: K.28.1 (k=1, 0x3c) ---> output: K.28.1 (k=1, 0x3c) | err=0 | [OK]
+[455000 ns] #3 | input: K.28.2 (k=1, 0x5c) ---> output: K.28.2 (k=1, 0x5c) | err=0 | [OK]
+[585000 ns] #4 | input: K.28.3 (k=1, 0x7c) ---> output: K.28.3 (k=1, 0x7c) | err=0 | [OK]
+[715000 ns] #5 | input: K.28.4 (k=1, 0x9c) ---> output: K.28.4 (k=1, 0x9c) | err=0 | [OK]
+[845000 ns] #6 | input: K.28.5 (k=1, 0xbc) ---> output: K.28.5 (k=1, 0xbc) | err=0 | [OK]
+[975000 ns] #7 | input: K.28.6 (k=1, 0xdc) ---> output: K.28.6 (k=1, 0xdc) | err=0 | [OK]
+[1105000 ns] #8 | input: K.28.7 (k=1, 0xfc) ---> output: K.28.7 (k=1, 0xfc) | err=0 | [OK]
+[1235000 ns] #9 | input: K.23.7 (k=1, 0xf7) ---> output: K.23.7 (k=1, 0xf7) | err=0 | [OK]
+[1365000 ns] #10 | input: K.27.7 (k=1, 0xfb) ---> output: K.27.7 (k=1, 0xfb) | err=0 | [OK]
+[1495000 ns] #11 | input: K.29.7 (k=1, 0xfd) ---> output: K.29.7 (k=1, 0xfd) | err=0 | [OK]
+
+================ pattern 2: byte pattern (IDLE / WALKING 1 & 0) ================
+[1625000 ns] #12 | input: K.30.7 (k=1, 0xfe) ---> output: K.30.7 (k=1, 0xfe) | err=0 | [OK]
+[1755000 ns] #13 | input: D.21.5 (k=0, 0xb5) ---> output: D.21.5 (k=0, 0xb5) | err=0 | [OK]
+[1885000 ns] #14 | input: D.10.2 (k=0, 0x4a) ---> output: D.10.2 (k=0, 0x4a) | err=0 | [OK]
+[2015000 ns] #15 | input: D.00.0 (k=0, 0x00) ---> output: D.00.0 (k=0, 0x00) | err=0 | [OK]
+[2145000 ns] #16 | input: D.31.7 (k=0, 0xff) ---> output: D.31.7 (k=0, 0xff) | err=0 | [OK]
+[2275000 ns] #17 | input: D.21.2 (k=0, 0x55) ---> output: D.21.2 (k=0, 0x55) | err=0 | [OK]
+[2405000 ns] #18 | input: D.10.5 (k=0, 0xaa) ---> output: D.10.5 (k=0, 0xaa) | err=0 | [OK]
+[2535000 ns] #19 | input: D.01.0 (k=0, 0x01) ---> output: D.01.0 (k=0, 0x01) | err=0 | [OK]
+[2665000 ns] #20 | input: D.30.7 (k=0, 0xfe) ---> output: D.30.7 (k=0, 0xfe) | err=0 | [OK]
+[2795000 ns] #21 | input: D.02.0 (k=0, 0x02) ---> output: D.02.0 (k=0, 0x02) | err=0 | [OK]
+[2925000 ns] #22 | input: D.29.7 (k=0, 0xfd) ---> output: D.29.7 (k=0, 0xfd) | err=0 | [OK]
+[3055000 ns] #23 | input: D.04.0 (k=0, 0x04) ---> output: D.04.0 (k=0, 0x04) | err=0 | [OK]
+[3185000 ns] #24 | input: D.27.7 (k=0, 0xfb) ---> output: D.27.7 (k=0, 0xfb) | err=0 | [OK]
+[3315000 ns] #25 | input: D.08.0 (k=0, 0x08) ---> output: D.08.0 (k=0, 0x08) | err=0 | [OK]
+[3445000 ns] #26 | input: D.23.7 (k=0, 0xf7) ---> output: D.23.7 (k=0, 0xf7) | err=0 | [OK]
+[3575000 ns] #27 | input: D.16.0 (k=0, 0x10) ---> output: D.16.0 (k=0, 0x10) | err=0 | [OK]
+[3705000 ns] #28 | input: D.15.7 (k=0, 0xef) ---> output: D.15.7 (k=0, 0xef) | err=0 | [OK]
+[3835000 ns] #29 | input: D.00.1 (k=0, 0x20) ---> output: D.00.1 (k=0, 0x20) | err=0 | [OK]
+[3965000 ns] #30 | input: D.31.6 (k=0, 0xdf) ---> output: D.31.6 (k=0, 0xdf) | err=0 | [OK]
+[4095000 ns] #31 | input: D.00.2 (k=0, 0x40) ---> output: D.00.2 (k=0, 0x40) | err=0 | [OK]
+[4225000 ns] #32 | input: D.31.5 (k=0, 0xbf) ---> output: D.31.5 (k=0, 0xbf) | err=0 | [OK]
+[4355000 ns] #33 | input: D.00.4 (k=0, 0x80) ---> output: D.00.4 (k=0, 0x80) | err=0 | [OK]
+
+================ pattern 3: data of real packets (IDLE -> SOP -> PAYLOAD -> EOP) ================
+[4485000 ns] #34 | input: D.31.3 (k=0, 0x7f) ---> output: D.31.3 (k=0, 0x7f) | err=0 | [OK]
+[4615000 ns] #35 | input: K.28.5 (k=1, 0xbc) ---> output: K.28.5 (k=1, 0xbc) | err=0 | [OK]
+[4745000 ns] #36 | input: K.28.5 (k=1, 0xbc) ---> output: K.28.5 (k=1, 0xbc) | err=0 | [OK]
+[4875000 ns] #37 | input: K.28.1 (k=1, 0x3c) ---> output: K.28.1 (k=1, 0x3c) | err=0 | [OK]
+[5005000 ns] #38 | input: D.20.5 (k=0, 0xb4) ---> output: D.20.5 (k=0, 0xb4) | err=0 | [OK]
+[5135000 ns] #39 | input: D.07.4 (k=0, 0x87) ---> output: D.07.4 (k=0, 0x87) | err=0 | [OK]
+[5265000 ns] #40 | input: D.22.4 (k=0, 0x96) ---> output: D.22.4 (k=0, 0x96) | err=0 | [OK]
+[5395000 ns] #41 | input: D.01.7 (k=0, 0xe1) ---> output: D.01.7 (k=0, 0xe1) | err=0 | [OK]
+[5525000 ns] #42 | input: D.16.7 (k=0, 0xf0) ---> output: D.16.7 (k=0, 0xf0) | err=0 | [OK]
+[5655000 ns] #43 | input: D.03.6 (k=0, 0xc3) ---> output: D.03.6 (k=0, 0xc3) | err=0 | [OK]
+[5785000 ns] #44 | input: D.18.6 (k=0, 0xd2) ---> output: D.18.6 (k=0, 0xd2) | err=0 | [OK]
+[5915000 ns] #45 | input: D.13.1 (k=0, 0x2d) ---> output: D.13.1 (k=0, 0x2d) | err=0 | [OK]
+[6045000 ns] #46 | input: K.29.7 (k=1, 0xfd) ---> output: K.29.7 (k=1, 0xfd) | err=0 | [OK]
+
+================ pattern 4: A COMPLETE CHECK OF ALL 256 BYTES OF DATA (0x00..0xFF) ================
+[6175000 ns] #47 | input: K.28.5 (k=1, 0xbc) ---> output: K.28.5 (k=1, 0xbc) | err=0 | [OK]
+[6305000 ns] #48 | input: D.00.0 (k=0, 0x00) ---> output: D.00.0 (k=0, 0x00) | err=0 | [OK]
+[6435000 ns] #49 | input: D.01.0 (k=0, 0x01) ---> output: D.01.0 (k=0, 0x01) | err=0 | [OK]
+[6565000 ns] #50 | input: D.02.0 (k=0, 0x02) ---> output: D.02.0 (k=0, 0x02) | err=0 | [OK]
+[6695000 ns] #51 | input: D.03.0 (k=0, 0x03) ---> output: D.03.0 (k=0, 0x03) | err=0 | [OK]
+[6825000 ns] #52 | input: D.04.0 (k=0, 0x04) ---> output: D.04.0 (k=0, 0x04) | err=0 | [OK]
+[6955000 ns] #53 | input: D.05.0 (k=0, 0x05) ---> output: D.05.0 (k=0, 0x05) | err=0 | [OK]
+[7085000 ns] #54 | input: D.06.0 (k=0, 0x06) ---> output: D.06.0 (k=0, 0x06) | err=0 | [OK]
+[7215000 ns] #55 | input: D.07.0 (k=0, 0x07) ---> output: D.07.0 (k=0, 0x07) | err=0 | [OK]
+[7345000 ns] #56 | input: D.08.0 (k=0, 0x08) ---> output: D.08.0 (k=0, 0x08) | err=0 | [OK]
+[7475000 ns] #57 | input: D.09.0 (k=0, 0x09) ---> output: D.09.0 (k=0, 0x09) | err=0 | [OK]
+[7605000 ns] #58 | input: D.10.0 (k=0, 0x0a) ---> output: D.10.0 (k=0, 0x0a) | err=0 | [OK]
+[7735000 ns] #59 | input: D.11.0 (k=0, 0x0b) ---> output: D.11.0 (k=0, 0x0b) | err=0 | [OK]
+[7865000 ns] #60 | input: D.12.0 (k=0, 0x0c) ---> output: D.12.0 (k=0, 0x0c) | err=0 | [OK]
+[7995000 ns] #61 | input: D.13.0 (k=0, 0x0d) ---> output: D.13.0 (k=0, 0x0d) | err=0 | [OK]
+[8125000 ns] #62 | input: D.14.0 (k=0, 0x0e) ---> output: D.14.0 (k=0, 0x0e) | err=0 | [OK]
+[8255000 ns] #63 | input: D.15.0 (k=0, 0x0f) ---> output: D.15.0 (k=0, 0x0f) | err=0 | [OK]
+[8385000 ns] #64 | input: D.16.0 (k=0, 0x10) ---> output: D.16.0 (k=0, 0x10) | err=0 | [OK]
+[8515000 ns] #65 | input: D.17.0 (k=0, 0x11) ---> output: D.17.0 (k=0, 0x11) | err=0 | [OK]
+[8645000 ns] #66 | input: D.18.0 (k=0, 0x12) ---> output: D.18.0 (k=0, 0x12) | err=0 | [OK]
+[8775000 ns] #67 | input: D.19.0 (k=0, 0x13) ---> output: D.19.0 (k=0, 0x13) | err=0 | [OK]
+[8905000 ns] #68 | input: D.20.0 (k=0, 0x14) ---> output: D.20.0 (k=0, 0x14) | err=0 | [OK]
+[9035000 ns] #69 | input: D.21.0 (k=0, 0x15) ---> output: D.21.0 (k=0, 0x15) | err=0 | [OK]
+[9165000 ns] #70 | input: D.22.0 (k=0, 0x16) ---> output: D.22.0 (k=0, 0x16) | err=0 | [OK]
+[9295000 ns] #71 | input: D.23.0 (k=0, 0x17) ---> output: D.23.0 (k=0, 0x17) | err=0 | [OK]
+[9425000 ns] #72 | input: D.24.0 (k=0, 0x18) ---> output: D.24.0 (k=0, 0x18) | err=0 | [OK]
+[9555000 ns] #73 | input: D.25.0 (k=0, 0x19) ---> output: D.25.0 (k=0, 0x19) | err=0 | [OK]
+[9685000 ns] #74 | input: D.26.0 (k=0, 0x1a) ---> output: D.26.0 (k=0, 0x1a) | err=0 | [OK]
+[9815000 ns] #75 | input: D.27.0 (k=0, 0x1b) ---> output: D.27.0 (k=0, 0x1b) | err=0 | [OK]
+[9945000 ns] #76 | input: D.28.0 (k=0, 0x1c) ---> output: D.28.0 (k=0, 0x1c) | err=0 | [OK]
+[10075000 ns] #77 | input: D.29.0 (k=0, 0x1d) ---> output: D.29.0 (k=0, 0x1d) | err=0 | [OK]
+[10205000 ns] #78 | input: D.30.0 (k=0, 0x1e) ---> output: D.30.0 (k=0, 0x1e) | err=0 | [OK]
+[10335000 ns] #79 | input: D.31.0 (k=0, 0x1f) ---> output: D.31.0 (k=0, 0x1f) | err=0 | [OK]
+[10465000 ns] #80 | input: D.00.1 (k=0, 0x20) ---> output: D.00.1 (k=0, 0x20) | err=0 | [OK]
+[10595000 ns] #81 | input: D.01.1 (k=0, 0x21) ---> output: D.01.1 (k=0, 0x21) | err=0 | [OK]
+[10725000 ns] #82 | input: D.02.1 (k=0, 0x22) ---> output: D.02.1 (k=0, 0x22) | err=0 | [OK]
+[10855000 ns] #83 | input: D.03.1 (k=0, 0x23) ---> output: D.03.1 (k=0, 0x23) | err=0 | [OK]
+[10985000 ns] #84 | input: D.04.1 (k=0, 0x24) ---> output: D.04.1 (k=0, 0x24) | err=0 | [OK]
+[11115000 ns] #85 | input: D.05.1 (k=0, 0x25) ---> output: D.05.1 (k=0, 0x25) | err=0 | [OK]
+[11245000 ns] #86 | input: D.06.1 (k=0, 0x26) ---> output: D.06.1 (k=0, 0x26) | err=0 | [OK]
+[11375000 ns] #87 | input: D.07.1 (k=0, 0x27) ---> output: D.07.1 (k=0, 0x27) | err=0 | [OK]
+[11505000 ns] #88 | input: D.08.1 (k=0, 0x28) ---> output: D.08.1 (k=0, 0x28) | err=0 | [OK]
+[11635000 ns] #89 | input: D.09.1 (k=0, 0x29) ---> output: D.09.1 (k=0, 0x29) | err=0 | [OK]
+[11765000 ns] #90 | input: D.10.1 (k=0, 0x2a) ---> output: D.10.1 (k=0, 0x2a) | err=0 | [OK]
+[11895000 ns] #91 | input: D.11.1 (k=0, 0x2b) ---> output: D.11.1 (k=0, 0x2b) | err=0 | [OK]
+[12025000 ns] #92 | input: D.12.1 (k=0, 0x2c) ---> output: D.12.1 (k=0, 0x2c) | err=0 | [OK]
+[12155000 ns] #93 | input: D.13.1 (k=0, 0x2d) ---> output: D.13.1 (k=0, 0x2d) | err=0 | [OK]
+[12285000 ns] #94 | input: D.14.1 (k=0, 0x2e) ---> output: D.14.1 (k=0, 0x2e) | err=0 | [OK]
+[12415000 ns] #95 | input: D.15.1 (k=0, 0x2f) ---> output: D.15.1 (k=0, 0x2f) | err=0 | [OK]
+[12545000 ns] #96 | input: D.16.1 (k=0, 0x30) ---> output: D.16.1 (k=0, 0x30) | err=0 | [OK]
+[12675000 ns] #97 | input: D.17.1 (k=0, 0x31) ---> output: D.17.1 (k=0, 0x31) | err=0 | [OK]
+[12805000 ns] #98 | input: D.18.1 (k=0, 0x32) ---> output: D.18.1 (k=0, 0x32) | err=0 | [OK]
+[12935000 ns] #99 | input: D.19.1 (k=0, 0x33) ---> output: D.19.1 (k=0, 0x33) | err=0 | [OK]
+[13065000 ns] #100 | input: D.20.1 (k=0, 0x34) ---> output: D.20.1 (k=0, 0x34) | err=0 | [OK]
+[13195000 ns] #101 | input: D.21.1 (k=0, 0x35) ---> output: D.21.1 (k=0, 0x35) | err=0 | [OK]
+[13325000 ns] #102 | input: D.22.1 (k=0, 0x36) ---> output: D.22.1 (k=0, 0x36) | err=0 | [OK]
+[13455000 ns] #103 | input: D.23.1 (k=0, 0x37) ---> output: D.23.1 (k=0, 0x37) | err=0 | [OK]
+[13585000 ns] #104 | input: D.24.1 (k=0, 0x38) ---> output: D.24.1 (k=0, 0x38) | err=0 | [OK]
+[13715000 ns] #105 | input: D.25.1 (k=0, 0x39) ---> output: D.25.1 (k=0, 0x39) | err=0 | [OK]
+[13845000 ns] #106 | input: D.26.1 (k=0, 0x3a) ---> output: D.26.1 (k=0, 0x3a) | err=0 | [OK]
+[13975000 ns] #107 | input: D.27.1 (k=0, 0x3b) ---> output: D.27.1 (k=0, 0x3b) | err=0 | [OK]
+[14105000 ns] #108 | input: D.28.1 (k=0, 0x3c) ---> output: D.28.1 (k=0, 0x3c) | err=0 | [OK]
+[14235000 ns] #109 | input: D.29.1 (k=0, 0x3d) ---> output: D.29.1 (k=0, 0x3d) | err=0 | [OK]
+[14365000 ns] #110 | input: D.30.1 (k=0, 0x3e) ---> output: D.30.1 (k=0, 0x3e) | err=0 | [OK]
+[14495000 ns] #111 | input: D.31.1 (k=0, 0x3f) ---> output: D.31.1 (k=0, 0x3f) | err=0 | [OK]
+[14625000 ns] #112 | input: D.00.2 (k=0, 0x40) ---> output: D.00.2 (k=0, 0x40) | err=0 | [OK]
+[14755000 ns] #113 | input: D.01.2 (k=0, 0x41) ---> output: D.01.2 (k=0, 0x41) | err=0 | [OK]
+[14885000 ns] #114 | input: D.02.2 (k=0, 0x42) ---> output: D.02.2 (k=0, 0x42) | err=0 | [OK]
+[15015000 ns] #115 | input: D.03.2 (k=0, 0x43) ---> output: D.03.2 (k=0, 0x43) | err=0 | [OK]
+[15145000 ns] #116 | input: D.04.2 (k=0, 0x44) ---> output: D.04.2 (k=0, 0x44) | err=0 | [OK]
+[15275000 ns] #117 | input: D.05.2 (k=0, 0x45) ---> output: D.05.2 (k=0, 0x45) | err=0 | [OK]
+[15405000 ns] #118 | input: D.06.2 (k=0, 0x46) ---> output: D.06.2 (k=0, 0x46) | err=0 | [OK]
+[15535000 ns] #119 | input: D.07.2 (k=0, 0x47) ---> output: D.07.2 (k=0, 0x47) | err=0 | [OK]
+[15665000 ns] #120 | input: D.08.2 (k=0, 0x48) ---> output: D.08.2 (k=0, 0x48) | err=0 | [OK]
+[15795000 ns] #121 | input: D.09.2 (k=0, 0x49) ---> output: D.09.2 (k=0, 0x49) | err=0 | [OK]
+[15925000 ns] #122 | input: D.10.2 (k=0, 0x4a) ---> output: D.10.2 (k=0, 0x4a) | err=0 | [OK]
+[16055000 ns] #123 | input: D.11.2 (k=0, 0x4b) ---> output: D.11.2 (k=0, 0x4b) | err=0 | [OK]
+[16185000 ns] #124 | input: D.12.2 (k=0, 0x4c) ---> output: D.12.2 (k=0, 0x4c) | err=0 | [OK]
+[16315000 ns] #125 | input: D.13.2 (k=0, 0x4d) ---> output: D.13.2 (k=0, 0x4d) | err=0 | [OK]
+[16445000 ns] #126 | input: D.14.2 (k=0, 0x4e) ---> output: D.14.2 (k=0, 0x4e) | err=0 | [OK]
+[16575000 ns] #127 | input: D.15.2 (k=0, 0x4f) ---> output: D.15.2 (k=0, 0x4f) | err=0 | [OK]
+[16705000 ns] #128 | input: D.16.2 (k=0, 0x50) ---> output: D.16.2 (k=0, 0x50) | err=0 | [OK]
+[16835000 ns] #129 | input: D.17.2 (k=0, 0x51) ---> output: D.17.2 (k=0, 0x51) | err=0 | [OK]
+[16965000 ns] #130 | input: D.18.2 (k=0, 0x52) ---> output: D.18.2 (k=0, 0x52) | err=0 | [OK]
+[17095000 ns] #131 | input: D.19.2 (k=0, 0x53) ---> output: D.19.2 (k=0, 0x53) | err=0 | [OK]
+[17225000 ns] #132 | input: D.20.2 (k=0, 0x54) ---> output: D.20.2 (k=0, 0x54) | err=0 | [OK]
+[17355000 ns] #133 | input: D.21.2 (k=0, 0x55) ---> output: D.21.2 (k=0, 0x55) | err=0 | [OK]
+[17485000 ns] #134 | input: D.22.2 (k=0, 0x56) ---> output: D.22.2 (k=0, 0x56) | err=0 | [OK]
+[17615000 ns] #135 | input: D.23.2 (k=0, 0x57) ---> output: D.23.2 (k=0, 0x57) | err=0 | [OK]
+[17745000 ns] #136 | input: D.24.2 (k=0, 0x58) ---> output: D.24.2 (k=0, 0x58) | err=0 | [OK]
+[17875000 ns] #137 | input: D.25.2 (k=0, 0x59) ---> output: D.25.2 (k=0, 0x59) | err=0 | [OK]
+[18005000 ns] #138 | input: D.26.2 (k=0, 0x5a) ---> output: D.26.2 (k=0, 0x5a) | err=0 | [OK]
+[18135000 ns] #139 | input: D.27.2 (k=0, 0x5b) ---> output: D.27.2 (k=0, 0x5b) | err=0 | [OK]
+[18265000 ns] #140 | input: D.28.2 (k=0, 0x5c) ---> output: D.28.2 (k=0, 0x5c) | err=0 | [OK]
+[18395000 ns] #141 | input: D.29.2 (k=0, 0x5d) ---> output: D.29.2 (k=0, 0x5d) | err=0 | [OK]
+[18525000 ns] #142 | input: D.30.2 (k=0, 0x5e) ---> output: D.30.2 (k=0, 0x5e) | err=0 | [OK]
+[18655000 ns] #143 | input: D.31.2 (k=0, 0x5f) ---> output: D.31.2 (k=0, 0x5f) | err=0 | [OK]
+[18785000 ns] #144 | input: D.00.3 (k=0, 0x60) ---> output: D.00.3 (k=0, 0x60) | err=0 | [OK]
+[18915000 ns] #145 | input: D.01.3 (k=0, 0x61) ---> output: D.01.3 (k=0, 0x61) | err=0 | [OK]
+[19045000 ns] #146 | input: D.02.3 (k=0, 0x62) ---> output: D.02.3 (k=0, 0x62) | err=0 | [OK]
+[19175000 ns] #147 | input: D.03.3 (k=0, 0x63) ---> output: D.03.3 (k=0, 0x63) | err=0 | [OK]
+[19305000 ns] #148 | input: D.04.3 (k=0, 0x64) ---> output: D.04.3 (k=0, 0x64) | err=0 | [OK]
+[19435000 ns] #149 | input: D.05.3 (k=0, 0x65) ---> output: D.05.3 (k=0, 0x65) | err=0 | [OK]
+[19565000 ns] #150 | input: D.06.3 (k=0, 0x66) ---> output: D.06.3 (k=0, 0x66) | err=0 | [OK]
+[19695000 ns] #151 | input: D.07.3 (k=0, 0x67) ---> output: D.07.3 (k=0, 0x67) | err=0 | [OK]
+[19825000 ns] #152 | input: D.08.3 (k=0, 0x68) ---> output: D.08.3 (k=0, 0x68) | err=0 | [OK]
+[19955000 ns] #153 | input: D.09.3 (k=0, 0x69) ---> output: D.09.3 (k=0, 0x69) | err=0 | [OK]
+[20085000 ns] #154 | input: D.10.3 (k=0, 0x6a) ---> output: D.10.3 (k=0, 0x6a) | err=0 | [OK]
+[20215000 ns] #155 | input: D.11.3 (k=0, 0x6b) ---> output: D.11.3 (k=0, 0x6b) | err=0 | [OK]
+[20345000 ns] #156 | input: D.12.3 (k=0, 0x6c) ---> output: D.12.3 (k=0, 0x6c) | err=0 | [OK]
+[20475000 ns] #157 | input: D.13.3 (k=0, 0x6d) ---> output: D.13.3 (k=0, 0x6d) | err=0 | [OK]
+[20605000 ns] #158 | input: D.14.3 (k=0, 0x6e) ---> output: D.14.3 (k=0, 0x6e) | err=0 | [OK]
+[20735000 ns] #159 | input: D.15.3 (k=0, 0x6f) ---> output: D.15.3 (k=0, 0x6f) | err=0 | [OK]
+[20865000 ns] #160 | input: D.16.3 (k=0, 0x70) ---> output: D.16.3 (k=0, 0x70) | err=0 | [OK]
+[20995000 ns] #161 | input: D.17.3 (k=0, 0x71) ---> output: D.17.3 (k=0, 0x71) | err=0 | [OK]
+[21125000 ns] #162 | input: D.18.3 (k=0, 0x72) ---> output: D.18.3 (k=0, 0x72) | err=0 | [OK]
+[21255000 ns] #163 | input: D.19.3 (k=0, 0x73) ---> output: D.19.3 (k=0, 0x73) | err=0 | [OK]
+[21385000 ns] #164 | input: D.20.3 (k=0, 0x74) ---> output: D.20.3 (k=0, 0x74) | err=0 | [OK]
+[21515000 ns] #165 | input: D.21.3 (k=0, 0x75) ---> output: D.21.3 (k=0, 0x75) | err=0 | [OK]
+[21645000 ns] #166 | input: D.22.3 (k=0, 0x76) ---> output: D.22.3 (k=0, 0x76) | err=0 | [OK]
+[21775000 ns] #167 | input: D.23.3 (k=0, 0x77) ---> output: D.23.3 (k=0, 0x77) | err=0 | [OK]
+[21905000 ns] #168 | input: D.24.3 (k=0, 0x78) ---> output: D.24.3 (k=0, 0x78) | err=0 | [OK]
+[22035000 ns] #169 | input: D.25.3 (k=0, 0x79) ---> output: D.25.3 (k=0, 0x79) | err=0 | [OK]
+[22165000 ns] #170 | input: D.26.3 (k=0, 0x7a) ---> output: D.26.3 (k=0, 0x7a) | err=0 | [OK]
+[22295000 ns] #171 | input: D.27.3 (k=0, 0x7b) ---> output: D.27.3 (k=0, 0x7b) | err=0 | [OK]
+[22425000 ns] #172 | input: D.28.3 (k=0, 0x7c) ---> output: D.28.3 (k=0, 0x7c) | err=0 | [OK]
+[22555000 ns] #173 | input: D.29.3 (k=0, 0x7d) ---> output: D.29.3 (k=0, 0x7d) | err=0 | [OK]
+[22685000 ns] #174 | input: D.30.3 (k=0, 0x7e) ---> output: D.30.3 (k=0, 0x7e) | err=0 | [OK]
+[22815000 ns] #175 | input: D.31.3 (k=0, 0x7f) ---> output: D.31.3 (k=0, 0x7f) | err=0 | [OK]
+[22945000 ns] #176 | input: D.00.4 (k=0, 0x80) ---> output: D.00.4 (k=0, 0x80) | err=0 | [OK]
+[23075000 ns] #177 | input: D.01.4 (k=0, 0x81) ---> output: D.01.4 (k=0, 0x81) | err=0 | [OK]
+[23205000 ns] #178 | input: D.02.4 (k=0, 0x82) ---> output: D.02.4 (k=0, 0x82) | err=0 | [OK]
+[23335000 ns] #179 | input: D.03.4 (k=0, 0x83) ---> output: D.03.4 (k=0, 0x83) | err=0 | [OK]
+[23465000 ns] #180 | input: D.04.4 (k=0, 0x84) ---> output: D.04.4 (k=0, 0x84) | err=0 | [OK]
+[23595000 ns] #181 | input: D.05.4 (k=0, 0x85) ---> output: D.05.4 (k=0, 0x85) | err=0 | [OK]
+[23725000 ns] #182 | input: D.06.4 (k=0, 0x86) ---> output: D.06.4 (k=0, 0x86) | err=0 | [OK]
+[23855000 ns] #183 | input: D.07.4 (k=0, 0x87) ---> output: D.07.4 (k=0, 0x87) | err=0 | [OK]
+[23985000 ns] #184 | input: D.08.4 (k=0, 0x88) ---> output: D.08.4 (k=0, 0x88) | err=0 | [OK]
+[24115000 ns] #185 | input: D.09.4 (k=0, 0x89) ---> output: D.09.4 (k=0, 0x89) | err=0 | [OK]
+[24245000 ns] #186 | input: D.10.4 (k=0, 0x8a) ---> output: D.10.4 (k=0, 0x8a) | err=0 | [OK]
+[24375000 ns] #187 | input: D.11.4 (k=0, 0x8b) ---> output: D.11.4 (k=0, 0x8b) | err=0 | [OK]
+[24505000 ns] #188 | input: D.12.4 (k=0, 0x8c) ---> output: D.12.4 (k=0, 0x8c) | err=0 | [OK]
+[24635000 ns] #189 | input: D.13.4 (k=0, 0x8d) ---> output: D.13.4 (k=0, 0x8d) | err=0 | [OK]
+[24765000 ns] #190 | input: D.14.4 (k=0, 0x8e) ---> output: D.14.4 (k=0, 0x8e) | err=0 | [OK]
+[24895000 ns] #191 | input: D.15.4 (k=0, 0x8f) ---> output: D.15.4 (k=0, 0x8f) | err=0 | [OK]
+[25025000 ns] #192 | input: D.16.4 (k=0, 0x90) ---> output: D.16.4 (k=0, 0x90) | err=0 | [OK]
+[25155000 ns] #193 | input: D.17.4 (k=0, 0x91) ---> output: D.17.4 (k=0, 0x91) | err=0 | [OK]
+[25285000 ns] #194 | input: D.18.4 (k=0, 0x92) ---> output: D.18.4 (k=0, 0x92) | err=0 | [OK]
+[25415000 ns] #195 | input: D.19.4 (k=0, 0x93) ---> output: D.19.4 (k=0, 0x93) | err=0 | [OK]
+[25545000 ns] #196 | input: D.20.4 (k=0, 0x94) ---> output: D.20.4 (k=0, 0x94) | err=0 | [OK]
+[25675000 ns] #197 | input: D.21.4 (k=0, 0x95) ---> output: D.21.4 (k=0, 0x95) | err=0 | [OK]
+[25805000 ns] #198 | input: D.22.4 (k=0, 0x96) ---> output: D.22.4 (k=0, 0x96) | err=0 | [OK]
+[25935000 ns] #199 | input: D.23.4 (k=0, 0x97) ---> output: D.23.4 (k=0, 0x97) | err=0 | [OK]
+[26065000 ns] #200 | input: D.24.4 (k=0, 0x98) ---> output: D.24.4 (k=0, 0x98) | err=0 | [OK]
+[26195000 ns] #201 | input: D.25.4 (k=0, 0x99) ---> output: D.25.4 (k=0, 0x99) | err=0 | [OK]
+[26325000 ns] #202 | input: D.26.4 (k=0, 0x9a) ---> output: D.26.4 (k=0, 0x9a) | err=0 | [OK]
+[26455000 ns] #203 | input: D.27.4 (k=0, 0x9b) ---> output: D.27.4 (k=0, 0x9b) | err=0 | [OK]
+[26585000 ns] #204 | input: D.28.4 (k=0, 0x9c) ---> output: D.28.4 (k=0, 0x9c) | err=0 | [OK]
+[26715000 ns] #205 | input: D.29.4 (k=0, 0x9d) ---> output: D.29.4 (k=0, 0x9d) | err=0 | [OK]
+[26845000 ns] #206 | input: D.30.4 (k=0, 0x9e) ---> output: D.30.4 (k=0, 0x9e) | err=0 | [OK]
+[26975000 ns] #207 | input: D.31.4 (k=0, 0x9f) ---> output: D.31.4 (k=0, 0x9f) | err=0 | [OK]
+[27105000 ns] #208 | input: D.00.5 (k=0, 0xa0) ---> output: D.00.5 (k=0, 0xa0) | err=0 | [OK]
+[27235000 ns] #209 | input: D.01.5 (k=0, 0xa1) ---> output: D.01.5 (k=0, 0xa1) | err=0 | [OK]
+[27365000 ns] #210 | input: D.02.5 (k=0, 0xa2) ---> output: D.02.5 (k=0, 0xa2) | err=0 | [OK]
+[27495000 ns] #211 | input: D.03.5 (k=0, 0xa3) ---> output: D.03.5 (k=0, 0xa3) | err=0 | [OK]
+[27625000 ns] #212 | input: D.04.5 (k=0, 0xa4) ---> output: D.04.5 (k=0, 0xa4) | err=0 | [OK]
+[27755000 ns] #213 | input: D.05.5 (k=0, 0xa5) ---> output: D.05.5 (k=0, 0xa5) | err=0 | [OK]
+[27885000 ns] #214 | input: D.06.5 (k=0, 0xa6) ---> output: D.06.5 (k=0, 0xa6) | err=0 | [OK]
+[28015000 ns] #215 | input: D.07.5 (k=0, 0xa7) ---> output: D.07.5 (k=0, 0xa7) | err=0 | [OK]
+[28145000 ns] #216 | input: D.08.5 (k=0, 0xa8) ---> output: D.08.5 (k=0, 0xa8) | err=0 | [OK]
+[28275000 ns] #217 | input: D.09.5 (k=0, 0xa9) ---> output: D.09.5 (k=0, 0xa9) | err=0 | [OK]
+[28405000 ns] #218 | input: D.10.5 (k=0, 0xaa) ---> output: D.10.5 (k=0, 0xaa) | err=0 | [OK]
+[28535000 ns] #219 | input: D.11.5 (k=0, 0xab) ---> output: D.11.5 (k=0, 0xab) | err=0 | [OK]
+[28665000 ns] #220 | input: D.12.5 (k=0, 0xac) ---> output: D.12.5 (k=0, 0xac) | err=0 | [OK]
+[28795000 ns] #221 | input: D.13.5 (k=0, 0xad) ---> output: D.13.5 (k=0, 0xad) | err=0 | [OK]
+[28925000 ns] #222 | input: D.14.5 (k=0, 0xae) ---> output: D.14.5 (k=0, 0xae) | err=0 | [OK]
+[29055000 ns] #223 | input: D.15.5 (k=0, 0xaf) ---> output: D.15.5 (k=0, 0xaf) | err=0 | [OK]
+[29185000 ns] #224 | input: D.16.5 (k=0, 0xb0) ---> output: D.16.5 (k=0, 0xb0) | err=0 | [OK]
+[29315000 ns] #225 | input: D.17.5 (k=0, 0xb1) ---> output: D.17.5 (k=0, 0xb1) | err=0 | [OK]
+[29445000 ns] #226 | input: D.18.5 (k=0, 0xb2) ---> output: D.18.5 (k=0, 0xb2) | err=0 | [OK]
+[29575000 ns] #227 | input: D.19.5 (k=0, 0xb3) ---> output: D.19.5 (k=0, 0xb3) | err=0 | [OK]
+[29705000 ns] #228 | input: D.20.5 (k=0, 0xb4) ---> output: D.20.5 (k=0, 0xb4) | err=0 | [OK]
+[29835000 ns] #229 | input: D.21.5 (k=0, 0xb5) ---> output: D.21.5 (k=0, 0xb5) | err=0 | [OK]
+[29965000 ns] #230 | input: D.22.5 (k=0, 0xb6) ---> output: D.22.5 (k=0, 0xb6) | err=0 | [OK]
+[30095000 ns] #231 | input: D.23.5 (k=0, 0xb7) ---> output: D.23.5 (k=0, 0xb7) | err=0 | [OK]
+[30225000 ns] #232 | input: D.24.5 (k=0, 0xb8) ---> output: D.24.5 (k=0, 0xb8) | err=0 | [OK]
+[30355000 ns] #233 | input: D.25.5 (k=0, 0xb9) ---> output: D.25.5 (k=0, 0xb9) | err=0 | [OK]
+[30485000 ns] #234 | input: D.26.5 (k=0, 0xba) ---> output: D.26.5 (k=0, 0xba) | err=0 | [OK]
+[30615000 ns] #235 | input: D.27.5 (k=0, 0xbb) ---> output: D.27.5 (k=0, 0xbb) | err=0 | [OK]
+[30745000 ns] #236 | input: D.28.5 (k=0, 0xbc) ---> output: D.28.5 (k=0, 0xbc) | err=0 | [OK]
+[30875000 ns] #237 | input: D.29.5 (k=0, 0xbd) ---> output: D.29.5 (k=0, 0xbd) | err=0 | [OK]
+[31005000 ns] #238 | input: D.30.5 (k=0, 0xbe) ---> output: D.30.5 (k=0, 0xbe) | err=0 | [OK]
+[31135000 ns] #239 | input: D.31.5 (k=0, 0xbf) ---> output: D.31.5 (k=0, 0xbf) | err=0 | [OK]
+[31265000 ns] #240 | input: D.00.6 (k=0, 0xc0) ---> output: D.00.6 (k=0, 0xc0) | err=0 | [OK]
+[31395000 ns] #241 | input: D.01.6 (k=0, 0xc1) ---> output: D.01.6 (k=0, 0xc1) | err=0 | [OK]
+[31525000 ns] #242 | input: D.02.6 (k=0, 0xc2) ---> output: D.02.6 (k=0, 0xc2) | err=0 | [OK]
+[31655000 ns] #243 | input: D.03.6 (k=0, 0xc3) ---> output: D.03.6 (k=0, 0xc3) | err=0 | [OK]
+[31785000 ns] #244 | input: D.04.6 (k=0, 0xc4) ---> output: D.04.6 (k=0, 0xc4) | err=0 | [OK]
+[31915000 ns] #245 | input: D.05.6 (k=0, 0xc5) ---> output: D.05.6 (k=0, 0xc5) | err=0 | [OK]
+[32045000 ns] #246 | input: D.06.6 (k=0, 0xc6) ---> output: D.06.6 (k=0, 0xc6) | err=0 | [OK]
+[32175000 ns] #247 | input: D.07.6 (k=0, 0xc7) ---> output: D.07.6 (k=0, 0xc7) | err=0 | [OK]
+[32305000 ns] #248 | input: D.08.6 (k=0, 0xc8) ---> output: D.08.6 (k=0, 0xc8) | err=0 | [OK]
+[32435000 ns] #249 | input: D.09.6 (k=0, 0xc9) ---> output: D.09.6 (k=0, 0xc9) | err=0 | [OK]
+[32565000 ns] #250 | input: D.10.6 (k=0, 0xca) ---> output: D.10.6 (k=0, 0xca) | err=0 | [OK]
+[32695000 ns] #251 | input: D.11.6 (k=0, 0xcb) ---> output: D.11.6 (k=0, 0xcb) | err=0 | [OK]
+[32825000 ns] #252 | input: D.12.6 (k=0, 0xcc) ---> output: D.12.6 (k=0, 0xcc) | err=0 | [OK]
+[32955000 ns] #253 | input: D.13.6 (k=0, 0xcd) ---> output: D.13.6 (k=0, 0xcd) | err=0 | [OK]
+[33085000 ns] #254 | input: D.14.6 (k=0, 0xce) ---> output: D.14.6 (k=0, 0xce) | err=0 | [OK]
+[33215000 ns] #255 | input: D.15.6 (k=0, 0xcf) ---> output: D.15.6 (k=0, 0xcf) | err=0 | [OK]
+[33345000 ns] #256 | input: D.16.6 (k=0, 0xd0) ---> output: D.16.6 (k=0, 0xd0) | err=0 | [OK]
+[33475000 ns] #257 | input: D.17.6 (k=0, 0xd1) ---> output: D.17.6 (k=0, 0xd1) | err=0 | [OK]
+[33605000 ns] #258 | input: D.18.6 (k=0, 0xd2) ---> output: D.18.6 (k=0, 0xd2) | err=0 | [OK]
+[33735000 ns] #259 | input: D.19.6 (k=0, 0xd3) ---> output: D.19.6 (k=0, 0xd3) | err=0 | [OK]
+[33865000 ns] #260 | input: D.20.6 (k=0, 0xd4) ---> output: D.20.6 (k=0, 0xd4) | err=0 | [OK]
+[33995000 ns] #261 | input: D.21.6 (k=0, 0xd5) ---> output: D.21.6 (k=0, 0xd5) | err=0 | [OK]
+[34125000 ns] #262 | input: D.22.6 (k=0, 0xd6) ---> output: D.22.6 (k=0, 0xd6) | err=0 | [OK]
+[34255000 ns] #263 | input: D.23.6 (k=0, 0xd7) ---> output: D.23.6 (k=0, 0xd7) | err=0 | [OK]
+[34385000 ns] #264 | input: D.24.6 (k=0, 0xd8) ---> output: D.24.6 (k=0, 0xd8) | err=0 | [OK]
+[34515000 ns] #265 | input: D.25.6 (k=0, 0xd9) ---> output: D.25.6 (k=0, 0xd9) | err=0 | [OK]
+[34645000 ns] #266 | input: D.26.6 (k=0, 0xda) ---> output: D.26.6 (k=0, 0xda) | err=0 | [OK]
+[34775000 ns] #267 | input: D.27.6 (k=0, 0xdb) ---> output: D.27.6 (k=0, 0xdb) | err=0 | [OK]
+[34905000 ns] #268 | input: D.28.6 (k=0, 0xdc) ---> output: D.28.6 (k=0, 0xdc) | err=0 | [OK]
+[35035000 ns] #269 | input: D.29.6 (k=0, 0xdd) ---> output: D.29.6 (k=0, 0xdd) | err=0 | [OK]
+[35165000 ns] #270 | input: D.30.6 (k=0, 0xde) ---> output: D.30.6 (k=0, 0xde) | err=0 | [OK]
+[35295000 ns] #271 | input: D.31.6 (k=0, 0xdf) ---> output: D.31.6 (k=0, 0xdf) | err=0 | [OK]
+[35425000 ns] #272 | input: D.00.7 (k=0, 0xe0) ---> output: D.00.7 (k=0, 0xe0) | err=0 | [OK]
+[35555000 ns] #273 | input: D.01.7 (k=0, 0xe1) ---> output: D.01.7 (k=0, 0xe1) | err=0 | [OK]
+[35685000 ns] #274 | input: D.02.7 (k=0, 0xe2) ---> output: D.02.7 (k=0, 0xe2) | err=0 | [OK]
+[35815000 ns] #275 | input: D.03.7 (k=0, 0xe3) ---> output: D.03.7 (k=0, 0xe3) | err=0 | [OK]
+[35945000 ns] #276 | input: D.04.7 (k=0, 0xe4) ---> output: D.04.7 (k=0, 0xe4) | err=0 | [OK]
+[36075000 ns] #277 | input: D.05.7 (k=0, 0xe5) ---> output: D.05.7 (k=0, 0xe5) | err=0 | [OK]
+[36205000 ns] #278 | input: D.06.7 (k=0, 0xe6) ---> output: D.06.7 (k=0, 0xe6) | err=0 | [OK]
+[36335000 ns] #279 | input: D.07.7 (k=0, 0xe7) ---> output: D.07.7 (k=0, 0xe7) | err=0 | [OK]
+[36465000 ns] #280 | input: D.08.7 (k=0, 0xe8) ---> output: D.08.7 (k=0, 0xe8) | err=0 | [OK]
+[36595000 ns] #281 | input: D.09.7 (k=0, 0xe9) ---> output: D.09.7 (k=0, 0xe9) | err=0 | [OK]
+[36725000 ns] #282 | input: D.10.7 (k=0, 0xea) ---> output: D.10.7 (k=0, 0xea) | err=0 | [OK]
+[36855000 ns] #283 | input: D.11.7 (k=0, 0xeb) ---> output: D.11.7 (k=0, 0xeb) | err=0 | [OK]
+[36985000 ns] #284 | input: D.12.7 (k=0, 0xec) ---> output: D.12.7 (k=0, 0xec) | err=0 | [OK]
+[37115000 ns] #285 | input: D.13.7 (k=0, 0xed) ---> output: D.13.7 (k=0, 0xed) | err=0 | [OK]
+[37245000 ns] #286 | input: D.14.7 (k=0, 0xee) ---> output: D.14.7 (k=0, 0xee) | err=0 | [OK]
+[37375000 ns] #287 | input: D.15.7 (k=0, 0xef) ---> output: D.15.7 (k=0, 0xef) | err=0 | [OK]
+[37505000 ns] #288 | input: D.16.7 (k=0, 0xf0) ---> output: D.16.7 (k=0, 0xf0) | err=0 | [OK]
+[37635000 ns] #289 | input: D.17.7 (k=0, 0xf1) ---> output: D.17.7 (k=0, 0xf1) | err=0 | [OK]
+[37765000 ns] #290 | input: D.18.7 (k=0, 0xf2) ---> output: D.18.7 (k=0, 0xf2) | err=0 | [OK]
+[37895000 ns] #291 | input: D.19.7 (k=0, 0xf3) ---> output: D.19.7 (k=0, 0xf3) | err=0 | [OK]
+[38025000 ns] #292 | input: D.20.7 (k=0, 0xf4) ---> output: D.20.7 (k=0, 0xf4) | err=0 | [OK]
+[38155000 ns] #293 | input: D.21.7 (k=0, 0xf5) ---> output: D.21.7 (k=0, 0xf5) | err=0 | [OK]
+[38285000 ns] #294 | input: D.22.7 (k=0, 0xf6) ---> output: D.22.7 (k=0, 0xf6) | err=0 | [OK]
+[38415000 ns] #295 | input: D.23.7 (k=0, 0xf7) ---> output: D.23.7 (k=0, 0xf7) | err=0 | [OK]
+[38545000 ns] #296 | input: D.24.7 (k=0, 0xf8) ---> output: D.24.7 (k=0, 0xf8) | err=0 | [OK]
+[38675000 ns] #297 | input: D.25.7 (k=0, 0xf9) ---> output: D.25.7 (k=0, 0xf9) | err=0 | [OK]
+[38805000 ns] #298 | input: D.26.7 (k=0, 0xfa) ---> output: D.26.7 (k=0, 0xfa) | err=0 | [OK]
+[38935000 ns] #299 | input: D.27.7 (k=0, 0xfb) ---> output: D.27.7 (k=0, 0xfb) | err=0 | [OK]
+[39065000 ns] #300 | input: D.28.7 (k=0, 0xfc) ---> output: D.28.7 (k=0, 0xfc) | err=0 | [OK]
+[39195000 ns] #301 | input: D.29.7 (k=0, 0xfd) ---> output: D.29.7 (k=0, 0xfd) | err=0 | [OK]
+[39325000 ns] #302 | input: D.30.7 (k=0, 0xfe) ---> output: D.30.7 (k=0, 0xfe) | err=0 | [OK]
+
+================ pattern 5: pseudorandom flow (50 ТРАНЗАКЦИЙ) ================
+[39455000 ns] #303 | input: D.31.7 (k=0, 0xff) ---> output: D.31.7 (k=0, 0xff) | err=0 | [OK]
+[39585000 ns] #304 | input: D.31.4 (k=0, 0x9f) ---> output: D.31.4 (k=0, 0x9f) | err=0 | [OK]
+[39715000 ns] #305 | input: D.16.7 (k=0, 0xf0) ---> output: D.16.7 (k=0, 0xf0) | err=0 | [OK]
+[39845000 ns] #306 | input: D.15.2 (k=0, 0x4f) ---> output: D.15.2 (k=0, 0x4f) | err=0 | [OK]
+[39975000 ns] #307 | input: D.13.7 (k=0, 0xed) ---> output: D.13.7 (k=0, 0xed) | err=0 | [OK]
+[40105000 ns] #308 | input: D.31.4 (k=0, 0x9f) ---> output: D.31.4 (k=0, 0x9f) | err=0 | [OK]
+[40235000 ns] #309 | input: D.05.3 (k=0, 0x65) ---> output: D.05.3 (k=0, 0x65) | err=0 | [OK]
+[40365000 ns] #310 | input: D.12.7 (k=0, 0xec) ---> output: D.12.7 (k=0, 0xec) | err=0 | [OK]
+[40495000 ns] #311 | input: D.26.2 (k=0, 0x5a) ---> output: D.26.2 (k=0, 0x5a) | err=0 | [OK]
+[40625000 ns] #312 | input: D.31.0 (k=0, 0x1f) ---> output: D.31.0 (k=0, 0x1f) | err=0 | [OK]
+[40755000 ns] #313 | input: D.06.0 (k=0, 0x06) ---> output: D.06.0 (k=0, 0x06) | err=0 | [OK]
+[40885000 ns] #314 | input: D.16.3 (k=0, 0x70) ---> output: D.16.3 (k=0, 0x70) | err=0 | [OK]
+[41015000 ns] #315 | input: D.12.5 (k=0, 0xac) ---> output: D.12.5 (k=0, 0xac) | err=0 | [OK]
+[41145000 ns] #316 | input: K.28.1 (k=1, 0x3c) ---> output: K.28.1 (k=1, 0x3c) | err=0 | [OK]
+[41275000 ns] #317 | input: K.28.6 (k=1, 0xdc) ---> output: K.28.6 (k=1, 0xdc) | err=0 | [OK]
+[41405000 ns] #318 | input: D.04.7 (k=0, 0xe4) ---> output: D.04.7 (k=0, 0xe4) | err=0 | [OK]
+[41535000 ns] #319 | input: D.06.5 (k=0, 0xa6) ---> output: D.06.5 (k=0, 0xa6) | err=0 | [OK]
+[41665000 ns] #320 | input: D.16.0 (k=0, 0x10) ---> output: D.16.0 (k=0, 0x10) | err=0 | [OK]
+[41795000 ns] #321 | input: D.27.4 (k=0, 0x9b) ---> output: D.27.4 (k=0, 0x9b) | err=0 | [OK]
+[41925000 ns] #322 | input: D.12.1 (k=0, 0x2c) ---> output: D.12.1 (k=0, 0x2c) | err=0 | [OK]
+[42055000 ns] #323 | input: D.20.0 (k=0, 0x14) ---> output: D.20.0 (k=0, 0x14) | err=0 | [OK]
+[42185000 ns] #324 | input: D.09.3 (k=0, 0x69) ---> output: D.09.3 (k=0, 0x69) | err=0 | [OK]
+[42315000 ns] #325 | input: D.23.5 (k=0, 0xb7) ---> output: D.23.5 (k=0, 0xb7) | err=0 | [OK]
+[42445000 ns] #326 | input: D.02.3 (k=0, 0x62) ---> output: D.02.3 (k=0, 0x62) | err=0 | [OK]
+[42575000 ns] #327 | input: D.28.2 (k=0, 0x5c) ---> output: D.28.2 (k=0, 0x5c) | err=0 | [OK]
+[42705000 ns] #328 | input: D.08.7 (k=0, 0xe8) ---> output: D.08.7 (k=0, 0xe8) | err=0 | [OK]
+[42835000 ns] #329 | input: D.30.2 (k=0, 0x5e) ---> output: D.30.2 (k=0, 0x5e) | err=0 | [OK]
+[42965000 ns] #330 | input: D.06.2 (k=0, 0x46) ---> output: D.06.2 (k=0, 0x46) | err=0 | [OK]
+[43095000 ns] #331 | input: D.23.2 (k=0, 0x57) ---> output: D.23.2 (k=0, 0x57) | err=0 | [OK]
+[43225000 ns] #332 | input: D.21.4 (k=0, 0x95) ---> output: D.21.4 (k=0, 0x95) | err=0 | [OK]
+[43355000 ns] #333 | input: K.27.7 (k=1, 0xfb) ---> output: K.27.7 (k=1, 0xfb) | err=0 | [OK]
+[43485000 ns] #334 | input: K.27.7 (k=1, 0xfb) ---> output: K.27.7 (k=1, 0xfb) | err=0 | [OK]
+[43615000 ns] #335 | input: D.20.5 (k=0, 0xb4) ---> output: D.20.5 (k=0, 0xb4) | err=0 | [OK]
+[43745000 ns] #336 | input: D.15.2 (k=0, 0x4f) ---> output: D.15.2 (k=0, 0x4f) | err=0 | [OK]
+[43875000 ns] #337 | input: K.27.7 (k=1, 0xfb) ---> output: K.27.7 (k=1, 0xfb) | err=0 | [OK]
+[44005000 ns] #338 | input: D.09.3 (k=0, 0x69) ---> output: D.09.3 (k=0, 0x69) | err=0 | [OK]
+[44135000 ns] #339 | input: D.13.4 (k=0, 0x8d) ---> output: D.13.4 (k=0, 0x8d) | err=0 | [OK]
+[44265000 ns] #340 | input: D.10.2 (k=0, 0x4a) ---> output: D.10.2 (k=0, 0x4a) | err=0 | [OK]
+[44395000 ns] #341 | input: D.14.3 (k=0, 0x6e) ---> output: D.14.3 (k=0, 0x6e) | err=0 | [OK]
+[44525000 ns] #342 | input: D.24.2 (k=0, 0x58) ---> output: D.24.2 (k=0, 0x58) | err=0 | [OK]
+[44655000 ns] #343 | input: D.08.0 (k=0, 0x08) ---> output: D.08.0 (k=0, 0x08) | err=0 | [OK]
+[44785000 ns] #344 | input: D.05.2 (k=0, 0x45) ---> output: D.05.2 (k=0, 0x45) | err=0 | [OK]
+[44915000 ns] #345 | input: D.19.4 (k=0, 0x93) ---> output: D.19.4 (k=0, 0x93) | err=0 | [OK]
+[45045000 ns] #346 | input: D.27.3 (k=0, 0x7b) ---> output: D.27.3 (k=0, 0x7b) | err=0 | [OK]
+[45175000 ns] #347 | input: K.29.7 (k=1, 0xfd) ---> output: K.29.7 (k=1, 0xfd) | err=0 | [OK]
+[45305000 ns] #348 | input: K.27.7 (k=1, 0xfb) ---> output: K.27.7 (k=1, 0xfb) | err=0 | [OK]
+[45435000 ns] #349 | input: K.28.5 (k=1, 0xbc) ---> output: K.28.5 (k=1, 0xbc) | err=0 | [OK]
+[45565000 ns] #350 | input: D.07.7 (k=0, 0xe7) ---> output: D.07.7 (k=0, 0xe7) | err=0 | [OK]
+[45695000 ns] #351 | input: D.30.5 (k=0, 0xbe) ---> output: D.30.5 (k=0, 0xbe) | err=0 | [OK]
+[45825000 ns] #352 | input: K.28.5 (k=1, 0xbc) ---> output: K.28.5 (k=1, 0xbc) | err=0 | [OK]
+[45955000 ns] #353 | input: D.03.7 (k=0, 0xe3) ---> output: D.03.7 (k=0, 0xe3) | err=0 | [OK]
+
+================================================================================
+ test results SERDES TOP:
+   words send : 353
+   words accept    : 353
+   mismatch: 0
+   status          : *** test success !!!! ***
+================================================================================
+
+$finish called from file "serdes_top_mntc_tb.v", line 262.
+$finish at simulation time             46185000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 46185000 ps
+CPU Time:      0.160 seconds;       Data structure size:   0.0Mb
+Fri Oct 30 15:43:59 2026
+
